@@ -49,7 +49,7 @@ $ geth --datadir "$ethereum_home" init "$ethereum_home/genesis.json"
 Then we run the geth console:
 
 ```bash
-$ geth --datadir "$ethereum_home" console
+$ geth --datadir "$ethereum_home" console --networkid 100
 ```
 
 ## view admin outout
@@ -107,10 +107,10 @@ Type the following into the console to ensure we are starting with zero blocks:
 
 ## run geth server
 
-Then we run the geth console:
+Run a single geth server on ONE node:
 
 ```bash
-$ geth --datadir "$ethereum_home/privatenetwork" --networkid 100
+$ geth --datadir "$ethereum_home" --networkid 100
 ```
 
 This will have created a listening server running on `127.0.0.1:30303`
@@ -118,6 +118,25 @@ This will have created a listening server running on `127.0.0.1:30303`
 You can test this:
 
 ```bash
-$ telnet 127.0.0.1 303
+$ telnet 127.0.0.1 30303
+```
+
+Grab the `UDP listener up` line and copy the `enode://XXX@[::]:30303` line.
+
+Find out your local ip address (`$ ifconfig | grep 192`) - and replace `[::]` with that ip:
+
+e.g. here is a bootnode address:
+
+```
+enode://165ec598b922a9ab8b195a098afe2524fecd8b23edb758ceeca064299d72b4c037f504af84f2cbec494094f23734ca0490dc9e4b437efe92efee261423625e04@192.168.0.35:30303
+```
+
+This is used to created the `geth` command to be run on the other nodes using the `--bootnodes` flag - for example:
+
+```bash
+$ geth --datadir "$ethereum_home" --networkid 100 --bootnodes enode://165ec598b922a9ab8b195a098afe2524fecd8b23edb758ceeca064299d72b4c037f504af84f2cbec494094f23734ca0490dc9e4b437efe92efee261423625e04@192.168.0.35:30303
+```
+
+
 
 
