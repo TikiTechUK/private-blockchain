@@ -41,7 +41,7 @@ Now add the following JSON to a `genesis.json` file (inside `$ethereum_home`)
 Now we initialize the genesis block that will use the config we just created:
 
 ```bash
-$ geth --datadir "$ethereum_home/privatenetwork" init "$ethereum_home/genesis.json"
+$ geth --datadir "$ethereum_home" init "$ethereum_home/genesis.json"
 ```
 
 ## run javascript console
@@ -49,7 +49,7 @@ $ geth --datadir "$ethereum_home/privatenetwork" init "$ethereum_home/genesis.js
 Then we run the geth console:
 
 ```bash
-$ geth --datadir "$ethereum_home/privatenetwork" console 2>console.log
+$ geth --datadir "$ethereum_home" console 2>console.log
 ```
 
 ## view admin outout
