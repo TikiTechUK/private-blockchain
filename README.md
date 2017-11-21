@@ -49,7 +49,7 @@ $ geth --datadir "$ethereum_home" init "$ethereum_home/genesis.json"
 Then we run the geth console:
 
 ```bash
-$ geth --datadir "$ethereum_home" console 2>console.log
+$ geth --datadir "$ethereum_home" console
 ```
 
 ## view admin outout
