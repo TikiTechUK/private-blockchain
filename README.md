@@ -22,7 +22,7 @@ Now add the following JSON to a `genesis.json` file (inside `$ethereum_home`)
 ```json
 {
     "config": {
-        "chainId": 15,
+        "chainId": 100,
         "homesteadBlock": 0,
         "eip155Block": 0,
         "eip158Block": 0
@@ -86,7 +86,7 @@ Now we can dump the admin info for the server - NOTE - make sure you can see the
   getNodeInfo: function(callback),
   getPeers: function(callback),
   importChain: function(),
-  removePeer: function(),
+  removePeer: function(), 
   sleep: function github.com/ethereum/go-ethereum/console.(*bridge).Sleep-fm(),
   sleepBlocks: function github.com/ethereum/go-ethereum/console.(*bridge).SleepBlocks-fm(),
   startRPC: function(),
@@ -105,6 +105,19 @@ Type the following into the console to ensure we are starting with zero blocks:
 0
 ```
 
+## run geth server
 
+Then we run the geth console:
+
+```bash
+$ geth --datadir "$ethereum_home/privatenetwork" --networkid 100
+```
+
+This will have created a listening server running on `127.0.0.1:30303`
+
+You can test this:
+
+```bash
+$ telnet 127.0.0.1 303
 
 
