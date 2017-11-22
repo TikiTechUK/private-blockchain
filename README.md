@@ -59,7 +59,7 @@ Now we can dump the admin info for the server - NOTE - make sure you can see the
 ```bash
 > admin
 {
-  datadir: "/Users/kai/projects/private-blockchain/privatenetwork/privatenetwork",
+  datadir: "/Users/kai/projects/private-blockchain/privatenetwork",
   nodeInfo: {
     enode: "enode://07c25495068df19102c0e2a62f9e5b183becb12893a5b3316fb41270c5d6bb9773397ff09454e13f6b18bcac518e8e745df28e090bf87c43fb5641390d394c9a@[::]:30303",
     id: "07c25495068df19102c0e2a62f9e5b183becb12893a5b3316fb41270c5d6bb9773397ff09454e13f6b18bcac518e8e745df28e090bf87c43fb5641390d394c9a",
