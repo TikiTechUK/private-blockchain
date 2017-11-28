@@ -1,6 +1,6 @@
 # Geth How To
 
-# Send someone some Ether
+## Send someone some Ether
 
 First unlock your account (don't forget to replace the address and password)
 
